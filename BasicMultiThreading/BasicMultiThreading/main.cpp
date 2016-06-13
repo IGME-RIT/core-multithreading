@@ -28,6 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	//http://stackoverflow.com/questions/15148057/what-does-stdthread-join-do
 	//http://www.cplusplus.com/reference/thread/thread/detach/
 	//https://en.wikipedia.org/wiki/Critical_section
+	//http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach
+	//http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach
 
 #include "ClassDeclarations.h"
 
