@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	//http://www.bogotobogo.com/cplusplus/multithreaded4_cplusplus11.php
 	//http://stackoverflow.com/questions/15148057/what-does-stdthread-join-do
 	//http://www.cplusplus.com/reference/thread/thread/detach/
+	//https://en.wikipedia.org/wiki/Critical_section
 
 #include "ClassDeclarations.h"
 

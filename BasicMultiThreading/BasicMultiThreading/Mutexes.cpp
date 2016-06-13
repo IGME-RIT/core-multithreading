@@ -15,6 +15,9 @@ void foobar(){
 	//Since num will be used by several threads, we mutex it so that only one thread can use it at a time
 	//Also cout sends the string to a buffer called stdout, this buffer is also a resource that will be shared between mutiple threads
 	mtx.lock();
+	//The inside of a mutex is called a critical section
+		//Definition from Wikipedia:
+			//A critical section part of a multi-process program that may not be concurrently executed by more than one of the program's processes
 	std::cout << "Num = " << num << std::endl;
 	num++;
 	mtx.unlock();
