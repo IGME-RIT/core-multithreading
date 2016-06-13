@@ -17,91 +17,50 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *	This tutorial deals with the basics of multithreading in C/C++.
-*
-*
-*
+*	It covers the basics of creating threads, using mutexes, and the difference between join and detach.
+*	This is meant for just the basics of mutithreading.
 */
-#include <iostream>
-#include <vector>
-#include <thread>
-#include <mutex>
 
-using std::cout;
-using std::endl;
-using std::thread;
+//Used:
+	//http://www.drdobbs.com/tools/avoiding-classic-threading-problems/231000499
+	//http://www.drdobbs.com/cpp/volatile-the-multithreaded-programmers-b/184403766
+	//http://www.bogotobogo.com/cplusplus/multithreaded4_cplusplus11.php
+	//http://stackoverflow.com/questions/15148057/what-does-stdthread-join-do
+	//http://www.cplusplus.com/reference/thread/thread/detach/
 
-void basicThreading(const int numThreads);
-void foo();
-void mutexs();
-void printStuff(int index);
-void joinVSDetach();
+#include "ClassDeclarations.h"
 
-//Thread Issues
-	//Too Many Threads
-	//Data Races
-	//Deadlocks
-		//thread a		thread b
-		//lock1			lock2
-		//lock2			lock1
-	//Livelocks
-	//highly contended Locks
-	//Priority Inversion
-
+//Before we start talking about threading,
+//It is important to tackle the difference between concurrent computing and parallel computing
+//parallel is where you have the threads running on different cores all running at the same instant in time
+//concurrent is when you have multiple threads running on the same core,
+	//but each thread is given its own small amount of time to work before it is passed to the next thread
 
 int main(){
-	//Gives an approximation of the number of threads supported
-	//this is system and implementation specific
-	//
-	cout << std::thread::hardware_concurrency() << endl;
+	//Hardware Concurrency is the number of threads that your processor can run at simultaneously
+		//Gives an approximation of the number of threads supported
+		//this is system and implementation specific
+	unsigned int numThreads = std::thread::hardware_concurrency();
+	cout << numThreads << endl;
+	
+#pragma region Basic Threading Intro
+	BasicThreading threadsIntro;
+	threadsIntro.basicThreadingExample(numThreads);
+#pragma endregion
+
+#pragma region Basic Mutex Intro
+	Mutexes mutexesIntro;
+	mutexesIntro.mutexExample(numThreads);
+#pragma endregion
+
+#pragma region Basic Intro on Joining VS Detaching Threads
+	JoinVSDetach joinVSDetachIntro;
+	joinVSDetachIntro.joinVSDetachExample();
+#pragma endregion
+
+	//basicThreading(numThreads);
+	//mutexs(numThreads);
 
 	getchar();
 	return 0;
-}
-
-void basicThreading(int numThreads){
-	//To create a thread you do it by creating an object of the thread class
-		//Takes in a function to do while it runs
-		//foo doesn't do anything, it is just to show syntax
-	thread beginner(foo);
-
-	//We will get to it later, but for right now, you have to join a thread when it is done being used
-	//a good habit to get into is to make sure you can join the thread
-	if (beginner.joinable())
-		beginner.join();
-
-	//That was a basic look at threading, now we will deal with creating multiple threads
-	std::vector<thread> threads(numThreads);
-	for (int i = 0; i < threads.size(); i++){
-		threads[i] = thread(foo);
-	}
-
-	for (int i = 0; i < threads.size(); i++){
-		if (threads[i].joinable())
-			threads[i].join();
-	}
-}
-
-void foo(){
-	//s
-}
-
-std::mutex mtx;
-int numArr[4] = { 0, 0, 0, 0 };
-void mutexs(){
-	//s
-}
-
-void printStuff(int index){
-	//Need to lock since cout merely sends the string to the stdout buffer
-	while (numArr[index] < 10) {
-		mtx.lock();
-		cout << "Thread " << index << ": " << numArr[index] << endl;
-		mtx.unlock();
-
-		numArr[index]++;
-	}
-}
-
-void joinVSDetach(){
-	//s
 }
