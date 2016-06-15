@@ -20,4 +20,5 @@ extra_resources:
   - "https://en.wikipedia.org/wiki/Critical_section"
   - "http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach"
   - "http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach"
+  - "http://www.bogotobogo.com/cplusplus/multithreaded.php"
 connections:
