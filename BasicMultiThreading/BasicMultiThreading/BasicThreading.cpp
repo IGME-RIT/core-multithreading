@@ -6,7 +6,7 @@ static void nothing(){
 void BasicThreading::basicThreadingExample(int numThreads){
 	//To create a thread you do it by creating an object of the thread class
 	//Takes in a function to do while it runs
-	//foo doesn't do anything, it is just to show syntax
+	//the function nothing() doesn't do anything, it is just to show syntax
 	thread beginner(nothing);
 
 	//We will get to it later, but for right now, you have to join a thread when it is done being used
