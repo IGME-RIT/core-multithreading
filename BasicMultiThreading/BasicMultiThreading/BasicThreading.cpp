@@ -17,7 +17,7 @@ void BasicThreading::basicThreadingExample(int numThreads){
 	//That was a basic look at threading, now we will deal with creating multiple threads
 	//I create a vector to store a variable amount of threads
 	//currently it is based off the hardware concurrency
-	std::vector<thread> threads(numThreads);
+	vector<thread> threads(numThreads);
 	for (int i = 0; i < threads.size(); i++){
 		threads[i] = thread(nothing);
 	}

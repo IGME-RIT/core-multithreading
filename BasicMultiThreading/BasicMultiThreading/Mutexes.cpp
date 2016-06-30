@@ -18,7 +18,7 @@ static void fubar(){
 	//The inside of a mutex is called a critical section
 		//A critical section part of a multi-process program that may not be concurrently executed by more than one of the program's processes
 			//https://en.wikipedia.org/wiki/Critical_section
-	std::cout << "Num = " << num << std::endl;
+	cout << "Num = " << num << endl;
 	num++;
 	mtx.unlock();
 
@@ -29,7 +29,7 @@ static void fubar(){
 
 void Mutexes::mutexExample(int numThreads){
 	//You build the threads as normal
-	std::vector<thread> threads(numThreads);
+	vector<thread> threads(numThreads);
 	for (int i = 0; i < threads.size(); i++){
 		threads[i] = thread(fubar);
 	}
