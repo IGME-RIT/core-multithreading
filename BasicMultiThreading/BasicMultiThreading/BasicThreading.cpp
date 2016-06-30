@@ -1,6 +1,6 @@
 #include "ClassDeclarations.h"
 
-void nothing(){
+static void nothing(){
 }
 
 void BasicThreading::basicThreadingExample(int numThreads){

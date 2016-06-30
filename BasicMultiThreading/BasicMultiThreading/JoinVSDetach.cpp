@@ -1,13 +1,13 @@
 #include "ClassDeclarations.h"
 
-void nothing2(){
+static void nothing(){
 }
 
 void JoinVSDetach::joinVSDetachExample(){
 	//Join
 	//Makes the currently executing thread wait for another thread to finish processing
 #pragma region Join
-	thread joinTrial(nothing2);
+	thread joinTrial(nothing);
 
 	//Again, checking to make sure it can still be joinned
 	if (joinTrial.joinable())
@@ -17,7 +17,7 @@ void JoinVSDetach::joinVSDetachExample(){
 	//Detach
 	//Seperates the thread from the currently executing thread to allow them to run independently from one another
 #pragma region Detach
-	thread detachTrial(nothing2);
+	thread detachTrial(nothing);
 	detachTrial.detach();
 	//Now the thread is running seperately
 	//It will run seperately until the foo function completes

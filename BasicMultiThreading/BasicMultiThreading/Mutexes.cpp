@@ -10,14 +10,14 @@
 //This is an example of how to create a mutex
 std::mutex mtx;
 int num = 0;
-void foobar(){
+static void fubar(){
 	//A use of mutexes
 	//Since num will be used by several threads, we mutex it so that only one thread can use it at a time
 	//Also cout sends the string to a buffer called stdout, this buffer is also a resource that will be shared between mutiple threads
 	mtx.lock();
 	//The inside of a mutex is called a critical section
-		//Definition from Wikipedia:
-			//A critical section part of a multi-process program that may not be concurrently executed by more than one of the program's processes
+		//A critical section part of a multi-process program that may not be concurrently executed by more than one of the program's processes
+			//https://en.wikipedia.org/wiki/Critical_section
 	std::cout << "Num = " << num << std::endl;
 	num++;
 	mtx.unlock();
@@ -26,11 +26,12 @@ void foobar(){
 	//Also, There are a lot of things to consider when using mutexes.
 	//This is will be covered in another tutorial: 
 }
+
 void Mutexes::mutexExample(int numThreads){
 	//You build the threads as normal
 	std::vector<thread> threads(numThreads);
 	for (int i = 0; i < threads.size(); i++){
-		threads[i] = thread(foobar);
+		threads[i] = thread(fubar);
 	}
 
 	for (int i = 0; i < threads.size(); i++){
