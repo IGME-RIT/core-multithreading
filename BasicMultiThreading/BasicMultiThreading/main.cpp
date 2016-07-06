@@ -62,31 +62,6 @@ int main(){
 	joinVSDetachIntro.joinVSDetachExample();
 #pragma endregion
 
-	//Now that you have gone through all of the basics of threads, it is time to talk about a slightly more advanced topic
-	//This topic is Atomic Operations
-
-	//The first thing to go over when talking about Atomic Operations is the fact that this is where we start to get into how hardware works
-		//We won't go into too much detail about that, but it is important to understand a few things:
-			//A cycle or instruction cycle is the process by which a computer retrieves a program instruction from its memory, determines what actions the instructions requires and carries out those actions
-				//https://en.wikipedia.org/wiki/Instruction_cycle
-
-	//Atomic Vs Non-Atomic Operations
-		//A Atomic operation is an operation that takes a single cycle
-			//A single cycle means that no other threads can see the operation, since it is essentially done instantly
-				//Essentially, there is no chance of another thread interrupting the operation
-			//Example: num = 1;
-				//This is a single store operation, thus making it atomic
-		//A non-atomic operation takes more than a single cycle
-			//Example: int temp = num + 1; num = temp;
-				//This first has a load operation on num. Then it stores temp into num.
-				//While the individual operations are atomic, the overall operation isn't atomic
-		//num++ may or may not be an atomic operation depending on the architecture of your CPU
-			//This is good to understand for the future
-
-	//I bring this up now, since this helps dictate where you choose to lock and unlock your mutexes
-		//Also, this is really important for anything else you do beyond basic multithreads in the world of Concurrency and Parallelism
-		//For more info: http://preshing.com/20130618/atomic-vs-non-atomic-operations/
-
 	getchar();
 	return 0;
 }
