@@ -72,6 +72,7 @@
     <ClCompile Include="BasicThreading.cpp" />
     <ClCompile Include="JoinVSDetach.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MutexConsiderations.cpp" />
     <ClCompile Include="Mutexes.cpp" />
   </ItemGroup>
   <ItemGroup>

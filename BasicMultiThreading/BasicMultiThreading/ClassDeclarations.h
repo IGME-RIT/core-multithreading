@@ -16,6 +16,11 @@ public:
 	void mutexExample(int numThreads);
 };
 
+class MutexConsiderations{
+public:
+	void considerationsExample();
+};
+
 class JoinVSDetach{
 public:
 	void joinVSDetachExample();

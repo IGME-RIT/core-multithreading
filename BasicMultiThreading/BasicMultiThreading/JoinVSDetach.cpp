@@ -20,8 +20,8 @@ void JoinVSDetach::joinVSDetachExample(){
 	thread detachTrial(nothing);
 	detachTrial.detach();
 	//Now the thread is running seperately
-	//It will run seperately until the foo function completes
-	//Detaching is good if you need to run something in the background, but don't wan the main thread to wait on it
+	//It will run seperately until the nothing function completes
+	//Detaching is good if you need to run something in the background, but don't want the main thread to wait on it
 	//This means that if the main thread ends, then the detached thread's current action will be paused and the program will end
 	//This can be an issue, since if this scenario happens, the thread will not cleanup,
 	//meaning if there are deallocations that need to happen, they won't
