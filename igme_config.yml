@@ -1,24 +1,30 @@
+series: C++ Multithreading
 title: Basic Multithreading
 author:
   name: Sean Connolly
-  email:
-  github: maegico
+  email: 
+  github: https://github.com/maegico
 description: A basic tutorial about multi-threading that goes through threads and mutexes.
 language: C++
-image:
-  icon: https://cloud.githubusercontent.com/assets/10502938/13506660/28be0300-e14d-11e5-90e3-b194f14e52bd.PNG
-  banner: https://cloud.githubusercontent.com/assets/10502938/13506660/28be0300-e14d-11e5-90e3-b194f14e52bd.PNG
 tags:
-  - C++
   - Core
 extra_resources:
-  - "http://www.drdobbs.com/tools/avoiding-classic-threading-problems/231000499"
-  - "http://www.drdobbs.com/cpp/volatile-the-multithreaded-programmers-b/184403766"
-  - "http://www.bogotobogo.com/cplusplus/multithreaded4_cplusplus11.php"
-  - "http://stackoverflow.com/questions/15148057/what-does-stdthread-join-do"
-  - "http://www.cplusplus.com/reference/thread/thread/detach/"
-  - "https://en.wikipedia.org/wiki/Critical_section"
-  - "http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach"
-  - "http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach"
-  - "http://www.bogotobogo.com/cplusplus/multithreaded.php"
+  - link: http://www.drdobbs.com/tools/avoiding-classic-threading-problems/231000499
+    title: Avoiding Classic Threading Problems
+  - link: http://www.drdobbs.com/cpp/volatile-the-multithreaded-programmers-b/184403766
+    title: volatile: The Multithreaded Programmers Best Friend
+  - link: http://www.bogotobogo.com/cplusplus/multithreaded4_cplusplus11.php
+    title: Multithreaded programming with C++11
+  - link: http://stackoverflow.com/questions/15148057/what-does-stdthread-join-do
+    title: What does std::thread.join() do?
+  - link: http://www.cplusplus.com/reference/thread/thread/detach/
+    title: thread::detach
+  - link: http://stackoverflow.com/questions/22803600/when-should-i-use-stdthreaddetach
+    title: When should I use std::thread::detach?
+  - link: https://en.wikipedia.org/wiki/Critical_section
+    title: Wikipedia: Critical Sections
+  - link: http://www.bogotobogo.com/cplusplus/multithreaded.php
+    title: Multi-threaded Programming Terminology
 connections:
+  - series: Intermediate C++
+    title: Function Pointers
