@@ -1,9 +1,6 @@
-# Intermediate C++: Function Pointers
+# C++ Multithreading: Basic Multithreading
 
-Function pointers allow you to pass functions as parameters into other functions, or save them to be called later on.
-While fuctors only exist in C++, function pointers exist in C, and are frequently used for callbacks.
-This example covers the basics of declaring/using function pointers and their syntax.
-It also shows usage of function pointers for member functions.
+This example introduces the concept of threads, gives a short example of how to write a basic multithreaded program, and demonstrates the use of a mutex.
 
 # Setup
 
